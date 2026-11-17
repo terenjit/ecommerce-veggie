@@ -1,0 +1,19 @@
+package cmd
+
+import (
+	"github.com/spf13/cobra"
+	"github.com/terenjit/ecommerce-veggie/user-service/internal/app"
+)
+
+var startCmd = &cobra.Command{
+	Use:   "start",
+	Short: "start",
+	Long:  "start",
+	Run: func(cmd *cobra.Command, args []string) {
+		app.RunServer()
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(startCmd)
+}
